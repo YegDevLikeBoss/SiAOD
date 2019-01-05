@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src=https://imgur.com/2kPWwMA" alt="Криогенный мир дискретного анализа или как сделать умное лицо на экзамене по СиАОД" width=200"></a> 
+  <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src="https://imgur.com/2kPWwMA" alt="Криогенный мир дискретного анализа или как сделать умное лицо на экзамене по СиАОД" width=200"></a>
   <br>
     <br>
   Криогенный мир дискретного анализа или как сделать умное лицо на экзамене по СиАОД
