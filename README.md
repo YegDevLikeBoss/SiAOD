@@ -1,4 +1,4 @@
-﻿<h1 align="center">
+<h1 align="center">
 <br>
   <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src="https://i.imgur.com/VBppagE.jpg" alt="Криогенный мир дискретного анализа или как сделать умное лицо на экзамене по СиАОД" width=200"></a> 
   <br>
@@ -16,22 +16,7 @@
 
 ## Нерабы
 
-Feel free to submit a PR adding a link to your own recaps or reviews. If you want to translate the repo into your native language, please feel free to do so.
 
-All the translations for this repo will be listed below:
-
-- [Chinese](https://github.com/stephentian/33-js-concepts) — Re Tian
-- [Portuguese-BR](https://github.com/tiagoboeing/33-js-concepts) — Tiago Boeing
-- [Korean](https://github.com/yjs03057/33-js-concepts.git) — Suin Lee
-- [Spanish](https://github.com/adonismendozaperez/33-js-conceptos) — Adonis Mendoza
-- [Turkish](https://github.com/ilker0/33-js-concepts) — İlker Demir
-- [Russian](https://github.com/gumennii/33-js-concepts) — Mihail Gumennii
-- [Tiếng Việt](https://github.com/nguyentranchung/33-js-concepts) — Nguyễn Trần Chung
-- [Polish](https://github.com/lip3k/33-js-concepts) — Dawid Lipinski
-- [Persian](https://github.com/majidalavizadeh/33-js-concepts) — Majid Alavizadeh
-- [Indonesian](https://github.com/rijdz/33-js-concepts) — Rijdzuan Sampoerna
-- [French](https://github.com/robinmetral/33-concepts-js) — Robin Métral
-- [Hindi](https://github.com/vikaschauhan/33-js-concepts) — Vikas Chauhan
 
 ---
 
@@ -42,35 +27,42 @@ All the translations for this repo will be listed below:
 3. **[Реализуйте класс – стек с базовым набором методов на основе массива нетипированных указателей на размещенные в динамической памяти элементы](#3-value-types-and-reference-types)**
 4. **[С использованием основных методов работы со стеком составьте программу копирования элементов стека в новый стек в том же порядке](#4-implicit-explicit-nominal-structuring-and-duck-typing)**
 5. **[Реализуйте метод копирования элементов очереди в новую очередь.](#5--vs--vs-typeof)**
-6. **[Function Scope, Block Scope and Lexical Scope](#6-function-scope-block-scope-and-lexical-scope)**
-7. **[Expression vs Statement](#7-expression-vs-statement)**
-8. **[IIFE, Modules and Namespaces](#8-iife-modules-and-namespaces)**
-9. **[Message Queue and Event Loop](#9-message-queue-and-event-loop)**
-10. **[setTimeout, setInterval and requestAnimationFrame](#10-settimeout-setinterval-and-requestanimationframe)**
-11. **[JavaScript Engines](#11-javascript-engines)**
-12. **[Bitwise Operators, Type Arrays and Array Buffers](#12-bitwise-operators-type-arrays-and-array-buffers)**
-13. **[DOM and Layout Trees](#13-dom-and-layout-trees)**
-14. **[Factories and Classes](#14-factories-and-classes)**
-15. **[this, call, apply and bind](#15-this-call-apply-and-bind)**
-16. **[new, Constructor, instanceof and Instances](#16-new-constructor-instanceof-and-instances)**
-17. **[Prototype Inheritance and Prototype Chain](#17-prototype-inheritance-and-prototype-chain)**
-18. **[Object.create and Object.assign](#18-objectcreate-and-objectassign)**
-19. **[map, reduce, filter](#19-map-reduce-filter)**
-20. **[Pure Functions, Side Effects and State Mutation](#20-pure-functions-side-effects-and-state-mutation)**
-21. **[Closures](#21-closures)**
-22. **[High Order Functions](#22-high-order-functions)**
-23. **[Recursion](#23-recursion)**
-24. **[Collections and Generators](#24-collections-and-generators)**
-25. **[Promises](#25-promises)**
-26. **[async/await](#26-asyncawait)**
-27. **[Data Structures](#27-data-structures)**
-28. **[Expensive Operation and Big O Notation](#28-expensive-operation-and-big-o-notation)**
-29. **[Algorithms](#29-algorithms)**
-30. **[Inheritance, Polymorphism and Code Reuse](#30-inheritance-polymorphism-and-code-reuse)**
-31. **[Design Patterns](#31-design-patterns)**
-32. **[Partial Applications, Currying, Compose and Pipe](#32-partial-applications-currying-compose-and-pipe)**
-33. **[Clean Code](#33-clean-code)**
-
+6. **[Перевод из инфиксной формы записи выражения в префиксную](#6-function-scope-block-scope-and-lexical-scope)**
+7. **[Перевод инфиксной формы записи выражения в постфиксную](#7-expression-vs-statement)**
+8. **[С использованием стандартного набора методов составьте программу переноса из очереди строк в новую очередь элементов начинающихся на буквы «F» или «f»](#8-iife-modules-and-namespaces)**
+9. **[С использованием стандартного набора методов составьте программу записи элементов очереди в новую очередь в обратном порядке](#9-message-queue-and-event-loop)**
+10. **[АТД – очередь. Ее свойства. Способы реализации](#10-settimeout-setinterval-and-requestanimationframe)**
+11. **[Разработать класс «Бинарное дерево поиска». Реализовать метод вставки нового узла в дерево](#11-javascript-engines)**
+12. **[АТД Дек – это очередь с двумя вершинами: правой и левой, характеристика](#12-bitwise-operators-type-arrays-and-array-buffers)**
+13. **[Класс «Бинарное дерево поиска». Реализуйте метод поиска элемента в дереве](#13-dom-and-layout-trees)**
+14. **[АТД Очередь с приоритетом. Ее свойства. Способы реализации](#14-factories-and-classes)**
+15. **[Класс Идеально сбалансированное бинарное дерево. Реализуйте алгоритм прямого обхода дерева в глубину](#15-this-call-apply-and-bind)**
+16. **[АТД Стек. Свойства. Способы реализации](#16-new-constructor-instanceof-and-instances)**
+17. **[Класс Хеш-таблица. Реализация коллизий – цепное хеширование. Реализуйте метод вставки в таблицу нового узла с проверкой коэффициента нагрузки таблицы и рехеширования](#17-prototype-inheritance-and-prototype-chain)**
+18. **[АТД Линейный список. Свойства. Способы реализации.](#18-objectcreate-and-objectassign)**
+19. **[Класс Бинарное дерево. Реализовать метод по алгоритму симметричного обхода дерева с выводом списка вершин (номеров вершин)](#19-map-reduce-filter)**
+20. **[Инфиксная и постфиксная запись выражения. Алгоритм создания постфиксной записи арифметического выражения из инфиксной. Пример создания постфиксной записи арифметического выражения (схема преобразования)](#20-pure-functions-side-effects-and-state-mutation)**
+21. **[Класс Бинарное дерево поиска. Реализовать метод удаления узла с наибольшим значением, учитывая все случаи](#21-closures)**
+22. **[Класс Бинарное дерево. Реализуйте метод, который определяет количество узлов в дереве](#22-high-order-functions)**
+23. **[АТД сильно ветвящееся дерево. Способы реализация. Алгоритмы обхода в глубину](#23-recursion)**
+24. **[Класс Стек. Реализация методов: втолкнуть узел в стек, вытолкнуть узел из стека. Использование при вычислении значения арифметического выражения, содержащего скобки](#24-collections-and-generators)**
+25. **[АТД AVL дерево. Свойства. Алгоритм балансировки дерева при правом повороте](#25-promises)**
+26. **[АТД – объединение списков. Реализуйте АТД на линейной связанной структуре. Даны два линейных однонаправленных списка L и М. Где L {L1,L2,…..Lki } где 0<=i<=ki; и 0<=Li<=99, а М={M0, M1,…..Mkj} где 0<=j<=kj и 100<=Mj<=199. Объедините эти списки в один список LM={L0M0,L1M1….., LiMj….} где j>=i, а Li и Mj это два значения одного элемента списка LM](#26-asyncawait)**
+27. **[Ориентированный взвешенный граф. Свойства ориентированного графа. Представление в памяти. Алгоритм Дейкстры – поиск кратчайшего пути](#27-data-structures)**
+28. **[Класс - циклический линейный двунаправленный список. Реализуйте метод вставки нового узла в упорядоченный список так, чтобы упорядоченность не нарушилась](#28-expensive-operation-and-big-o-notation)**
+29. **[Хеш-таблица. Применение. Коллизии. Подходы к реализации коллизий](#29-algorithms)**
+30. **[Класс Линейный однонаправленный список. Реализовать метод удаления узла с заданным номером из списка](#30-inheritance-polymorphism-and-code-reuse)**
+31. **[АТД очередь с приоритетом. Свойства. Способы реализации. Алгоритм вставки нового элемента в очередь с приоритетом.](#31-design-patterns)**
+32. **[Класс Бинарное дерево поиска. Реализация дерева на связанной структуре хранении. Реализовать метод определения высоты дерева](#32-partial-applications-currying-compose-and-pipe)**
+33. **[Класс Очередь. Представление в памяти на однонаправленном списк. Реализуйте метод вычисления значения выражения, заданного в префиксной форме](#33-clean-code)**
+34. **[Дерево выражений. Свойства. Алгоритм формирования префиксной записи арифметического выражения](#34-clean-code)**
+35. **[AVL дерево. Свойства. Алгоритм вставки нового узла в дерево](#35-clean-code)**
+36. **[Класс Стек. Реализация на однонаправленном списке. Разработайте функцию для сложения двух целых чисел большой разрядности, представляя каждое число в объекте Стек](#36-clean-code)**
+37. **[Линейный список - Очередь. АТД – очередь. Реализация очереди на связанном списке. Функции операций на вставки и удаления узлов очереди](#37-clean-code)**
+38. **[Класс Двунаправленный список. Разработать метод, который определяет, симметричен ли список, т.е. элементы, отстоящие от левой и правой вершин на одинаковое расстояние равны](#38-clean-code)**
+39. **[Класс Граф. Реализовать на матрице смежности. Реализовать поиск кратчайшего пути от одной заданной вершины к другой, используя матрицу Флойда](#39-clean-code)**
+40. **[AVL дерево. Свойства. Алгоритм двойного поворота. Пример AVL дерева для балансировки которого требуется двойной поворот](#40-clean-code)**
+41. **[Дана последовательность ключей 1,2,3,4,5,6,7,8,9. Постройте бинарное дерево минимальной высоты с такими ключами](#41-clean-code)**
 
 ---
 
