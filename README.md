@@ -1,9 +1,9 @@
 <h1 align="center">
 <br>
-  <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src="https://i.imgur.com/2kPWwMA.png" alt="Криогенный мир дискретного анализа или как сделать умное лицо на экзамене по СиАОД" width=300"></a>
+  <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src="https://i.imgur.com/2kPWwMA.png" alt="Cryogenic World of Non-Slavish Devotion by Unchained Heroes" width=300"></a>
   <br>
     <br>
-  Криогенный мир дискретного анализа или как сделать умное лицо на экзамене по СиАОД
+  Cryogenic World of Non-Slavish Devotion by Unchained Heroes
     <br><br>
   </h1>
 
