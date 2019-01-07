@@ -159,9 +159,6 @@
 ---
 
 ### 7. Перевод инфиксной формы записи выражения в постфиксную
-
-**| Реализация при помощи стека, переводит инфиксное выражение (A+B)\*C --> в постфиксное AB+C\* |**
-<br>
 **[infix_to_postfix.cpp](https://github.com/mandliya/algorithms_and_data_structures/blob/master/stack_problems/infix_to_postfix.cpp)** 
 
 <details> 
