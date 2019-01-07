@@ -498,8 +498,8 @@ int main()
 ```
 </details> 
 
-&emsp;&ensp;***[infix_to_postfix.cpp](https://github.com/mandliya/algorithms_and_data_structures/blob/master/stack_problems/infix_to_postfix.cpp)***
-<br>&emsp;&ensp;***[Теория](https://master.virmandy.net/perevod-iz-infiksnoy-notatsii-v-postfiksnuyu-obratnaya-polskaya-zapis/)***
+&emsp;&ensp;**[infix_to_postfix.cpp](https://github.com/mandliya/algorithms_and_data_structures/blob/master/stack_problems/infix_to_postfix.cpp)**
+<br>&emsp;&ensp;**[Теория](https://master.virmandy.net/perevod-iz-infiksnoy-notatsii-v-postfiksnuyu-obratnaya-polskaya-zapis/)**
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
