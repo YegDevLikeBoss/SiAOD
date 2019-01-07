@@ -13,6 +13,8 @@
 
 **🚀 Отдельное спасибо Леонадро ЭмЭсО за возможность воспользоваться репозиторием (https://github.com/leonardomso/)**
 
+**:small_orange_diamond:  [Краткий экскурс по некоторым АТД и алгоритмам](http://www.mkurnosov.net/teaching/index.php/DSA/Spring2016)**
+
 ### Оглавление
 1. **[В чем заключаются достоинства и недостатки последовательного и связанного способов реализации динамических структур данных?](#1-в-чем-заключаются-достоинства-и-недостатки-последовательного-и-связанного-способов-реализации-динамических-структур-данных)**
 2. **[Назовите принципы функционирования стека, очереди и дека](#2-назовите-принципы-функционирования-стека-очереди-и-дека)**
@@ -159,6 +161,116 @@
 ---
 
 ### 7. Перевод инфиксной формы записи выражения в постфиксную
+<details> 
+  <summary> 
+    [postfix_to_infix.cpp]
+  </summary>
+
+```c++
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+// <--Структуры данных-->
+enum optype {power = 3, devide = 2, multiply = 2, minus = 1, plus = 1, null=0}; // приоритеты операций
+
+struct stack {
+	char val[100]; // непосредственно значение элемента
+	optype type; // приоритет операции, необходим для правильного расставления  скобок
+	stack * next;
+} *head;
+
+// <--Функции работы со стеком-->
+void push(char[], optype);
+void push(stack *);
+stack * pop();
+// <--Функция выполняющая наш алгоритм-->
+void fromRPN(char *, char *); // (RPN) Reverse polish notation
+
+int main() {
+	char infix[100], postfix[100]; // входная и выходная строка
+	gets(infix);
+	fromRPN(infix, postfix);
+	printf("%s\n", postfix);
+	system("PAUSE");
+	return 0;
+}
+
+void push(stack *t) {
+	t->next = head;
+	head = t;
+}
+
+void push(char str[], optype type) {
+	stack *t;
+	t = new stack;
+	strcpy(t->val, str);
+	t->type = type;
+	t->next = head;
+	head = t;
+}
+
+stack * pop() {
+	stack *t;
+	if(head == NULL) return NULL;
+	t = head;
+	head = t->next;
+	return t;
+}
+
+void fromRPN(char * input, char * output) {
+	char c, temp[100];
+	int p_temp=0;
+	stack *h1, *h2; // переменные для хранения первых двух элементов стека
+	optype type;
+	head = NULL;
+	while(*input) { // пока есть символы строке
+		c = (*input);
+		if(c>='0' && c<='9' || c=='.') { //если текущий символ часть числа
+			temp[p_temp++] = c; //то добавляем его во временную строку
+			temp[p_temp] = '\0';
+		} else if(c==' ') {
+			if(p_temp!=0) {
+				push(temp, null); // добавляем число в стек
+				p_temp=0; }
+			temp[0] = '\0'; // опустошаем временную строку
+		} else if(c=='+' || c=='-'|| c=='*' || c=='/' || c=='^') { //если читаем знак операции
+			h1 = pop(); // выталкиваем первый элемент
+			h2 = pop(); // выталкиваем второй элемент
+                        // находим приоритет операции
+			if(c=='+') type = plus;
+			else if(c=='-') type = minus;
+			else if(c=='*') type = multiply;
+			else if(c=='/') type = devide;
+			else if(c=='^') type = power;
+			if(h2->type!=null && h2->type<type) { // если приоритет для 1-го элемента меньше
+				temp[0]='('; temp[1] = '\0'; // берем выражение в скобки
+				h2->val[strlen(h2->val)+2] = '\0';
+				h2->val[strlen(h2->val)+1] = c; // приписываем знак операции
+				h2->val[strlen(h2->val)] = ')';
+			} else {
+				h2->val[strlen(h2->val)+1] = '\0';
+				h2->val[strlen(h2->val)] = c;
+			}
+			strcat(temp, h2->val);
+			if(h1->type!=null && h1->type<type) {  // если приоритет для 2-го элемента меньше
+				strcat(temp, "(");
+				h1->val[strlen(h1->val)+1] = '\0';
+				h1->val[strlen(h1->val)] = ')'; // берем выражение в скобки
+			}
+			strcat(temp, h1->val);
+			strcpy(h2->val, temp); // что бы не выделять память под новый элемент, копируем полученное выражение во второй элемент
+			delete h1; // удаляем первый элемент
+			h2->type = type; // устанавливаем новый приоритет операции
+			push(h2); // добавляем новый элемент в стек
+		}
+		input++;
+	}
+	strcpy(output, (pop())->val); // копируем выражение из вершины стека в строку результата
+}
+```
+</details/>
+
 <details> 
   <summary> 
     [infix_to_postfix.cpp]
@@ -376,6 +488,7 @@ int main()
 </details> 
 
 &emsp;&ensp;**[infix_to_postfix.cpp](https://github.com/mandliya/algorithms_and_data_structures/blob/master/stack_problems/infix_to_postfix.cpp)**
+<br>&emsp;&ensp;**[Теория](https://master.virmandy.net/perevod-iz-infiksnoy-notatsii-v-postfiksnuyu-obratnaya-polskaya-zapis/)**
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
@@ -418,15 +531,113 @@ int main()
 
 ### 10. АТД – очередь. Ее свойства. Способы реализации
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
+О́чередь — абстрактный тип данных с дисциплиной доступа к элементам «первый пришёл — первый вышел» (FIFO, англ. first in, first out). Добавление элемента (принято обозначать словом enqueue — поставить в очередь) возможно лишь в конец очереди, выборка — только из начала очереди (что принято называть словом dequeue — убрать из очереди), при этом выбранный элемент из очереди удаляется.
 
+<details> 
+  <summary> 
+    [Queue]
+  </summary>
+
+```c++
+#ifndef QUEUE_H
+#define QUEUE_H
+
+#include <exception>
+
+namespace algo {
+    const int defaultQueueCapacity = 500;
+
+    template <typename T>
+        class Queue {
+            public:
+                Queue( int capacity = defaultQueueCapacity )
+                    : _capacity { capacity }, _count { 0 },
+                      _head { 0 }, _tail { -1 }, _elements { new T[_capacity] }
+                { 
+                }
+
+                bool empty() const
+                {
+                    return ( _count == 0 );
+                }
+
+                int count() const
+                {
+                    return _count;
+                }
+
+                int capacity() const
+                {
+                    return _capacity;
+                }
+
+                void pop()
+                {
+                    if (empty())
+                    {
+                        return;
+                    }
+                    else { 
+                        --_count;
+                        ++_head;
+                        if ( _head == _capacity ) {
+                            _head = 0;
+                        }
+                    }
+                }
+
+                bool push( const T & obj )
+                {
+                    if ( _count == _capacity )
+                    {
+                        return false;
+                    }
+                    else {
+                        ++_count;
+                        ++_tail;
+                        if ( _tail == _capacity )
+                        {
+                            _tail = 0;
+                        }
+                        _elements[_tail]  = obj;
+                        return true;
+                    }
+                }
+
+                const T & front() const
+                {
+                    if ( empty() ) throw empty_queue_exception;
+                    return _elements[_head];
+                }
+
+            private:
+                class EmptyQueueException : public std::exception {
+                    virtual const char * what() const throw()
+                    {
+                        return "Queue is empty";
+                    }
+                } empty_queue_exception;
+
+                int _capacity;
+                int _count;
+                int _head;
+                int _tail;
+
+                T * _elements;
+
+                Queue( const Queue & );
+                Queue & operator= ( const Queue & );
+
+        }; //end of class queue
+
+} //end of namespace algo
+
+#endif //end of QUEUE_H
 ```
+</details> 
+**[Queue.h](https://github.com/mandliya/algorithms_and_data_structures/blob/master/include/queue.h)
+
+
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
@@ -609,6 +820,7 @@ int main() {
         \/     \/      \/|__|             \/               \/      \/       
 
 ```
+**[Теория](http://www.mkurnosov.net/teaching/uploads/DSA/dsa-lecture4.pdf)**
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
