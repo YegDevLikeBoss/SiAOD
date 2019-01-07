@@ -164,7 +164,7 @@
 ### 7. Перевод инфиксной формы записи выражения в постфиксную
 <details> 
   <summary> 
-    [postfix_to_infix.cpp]
+	  <strong>[postfix_to_infix.cpp]</strong>
   </summary>
 
 ```c++
@@ -274,7 +274,7 @@ void fromRPN(char * input, char * output) {
 
 <details> 
   <summary> 
-    [infix_to_postfix.cpp]
+	  <strong>[infix_to_postfix.cpp]</strong>
   </summary>
 
 ```c++
@@ -536,7 +536,7 @@ int main()
 
 <details> 
   <summary> 
-    [Queue]
+	  <strong>[Queue]</strong>
   </summary>
 
 ```c++
@@ -698,7 +698,7 @@ namespace algo {
 
 <details> 
   <summary> 
-    [prio_queue_by_binary_heap]
+	  <strong>[prio_queue_by_binary_heap]</strong>
   </summary>
  
  ```c++
