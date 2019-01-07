@@ -159,8 +159,6 @@
 ---
 
 ### 7. Перевод инфиксной формы записи выражения в постфиксную
-**[infix_to_postfix.cpp](https://github.com/mandliya/algorithms_and_data_structures/blob/master/stack_problems/infix_to_postfix.cpp)** 
-
 <details> 
   <summary> 
     [infix_to_postfix.cpp]
@@ -377,6 +375,8 @@ int main()
 ```
 </details> 
 
+&emsp;&ensp;**[infix_to_postfix.cpp](https://github.com/mandliya/algorithms_and_data_structures/blob/master/stack_problems/infix_to_postfix.cpp)**
+
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
 
@@ -485,15 +485,96 @@ int main()
 
 ### 14. АТД Очередь с приоритетом. Ее свойства. Способы реализации
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
+<details> 
+  <summary> 
+    [prio_queue_by_binary_heap]
+  </summary>
+ 
+ ```c++
+class pri_queue
+{
+public:
+  prio_queue(Compare const& comp = Compare());
+  
+  using value type = Prio;
+  using payload_type = Value;
+  
+  void                           push(Prio p, Value v);
+  std::pair<Prio const&, Value&> top() const noexcept;
+  void                           pop();
+  void                           reschedule_top(Prio);
+  bool                           empty() const noexcept;
+  std::size_t                    size() const noexcept();
+};
+ ```
+</details> 
 
-```
+<details> 
+  <summary> 
+    [prio_queue_by_static_stl_array]
+  </summary>
+  
+  ```c++
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+ 
+ 
+template<typename Type, std::size_t Size>
+class min_priority_queue {
+ 
+public:
+   min_priority_queue() : index(0) {}   
+ 
+   void push(Type const& value) {
+      assert(index < Size);
+      container[index] = value;
+      std::push_heap(&container[0], &container[0] + ++index, std::greater<int>());
+   }
+   
+   void pop() {
+      assert(index > 0);
+      std::pop_heap(&container[0], &container[0] + index--, std::greater<int>());
+   }
+   
+   Type & top() {
+      assert(index > 0);
+      return container[0];
+   }
+   
+   Type const& top() const {
+      assert(index > 0);
+      return container[0];
+   }
+ 
+private:
+   Type         container[Size];
+   std::size_t  index;
+};
+ 
+ 
+int main() {
+   min_priority_queue<int, 10> queue;
+   
+   queue.push(1);
+   std::cout << queue.top() << std::endl;
+   queue.push(2);
+   std::cout << queue.top() << std::endl;
+   queue.pop();
+   std::cout << queue.top() << std::endl;
+   queue.push(-1);
+   std::cout << queue.top() << std::endl;
+   queue.push(-3);
+   std::cout << queue.top() << std::endl;
+   queue.pop();
+   std::cout << queue.top() << std::endl;
+   queue.push(6);
+   std::cout << queue.top() << std::endl;
+}
+  ```
+</details> 
+
+&emsp;&ensp;**[prio_queue_by_binary_heap](https://github.com/rollbear/prio_queue/blob/master/README.md)**
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
