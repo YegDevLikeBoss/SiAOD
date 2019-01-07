@@ -635,9 +635,8 @@ namespace algo {
 #endif //end of QUEUE_H
 ```
 </details> 
-**[Queue.h](https://github.com/mandliya/algorithms_and_data_structures/blob/master/include/queue.h)
 
-
+&emsp;&ensp;**[Queue.h](https://github.com/mandliya/algorithms_and_data_structures/blob/master/include/queue.h)**
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
