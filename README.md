@@ -655,16 +655,48 @@ namespace algo {
 ---
 
 ### 11. Разработать класс «Бинарное дерево поиска». Реализовать метод вставки нового узла в дерево
+<details> 
+  <summary> 
+    <strong>[insertTreeNode.cpp]</strong>
+  </summary>
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
 
+Insert Node [insertTreeNode()]
+Insertion begins as a search would begin; if the root is not equal to the value, we search the left or right subtrees as before. Eventually, we will reach an external node and add the value as its right or left child, depending on the node's value. In other words, we examine the root and recursively insert the new node to the left subtree if the new value is less than the root, or the right subtree if the new value is greater than or equal to the root. Ω(logn) operations
+
+```c++
+struct Tree
+{
+  char data;
+  Tree *left;
+  Tree *right;  
+  Tree *parent;  
+};
+
+struct Tree* insertTreeNode(struct Tree *node, int data)
+{
+  static Tree *p;
+  Tree *retNode;
+
+  //if(node != NULL) p = node;
+
+  if(node == NULL)  {
+      retNode = newTreeNode(data);
+      retNode->parent = p;
+      return retNode;
+  }
+  if(data <= node->data ) { 
+      p = node;
+      node->left = insertTreeNode(node->left,data);
+  } 
+  else {
+      p = node;
+      node->right = insertTreeNode(node->right,data);
+  } 
+  return node;
+}
 ```
+</details>
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
@@ -1194,15 +1226,47 @@ typedef Node* Link;
 
 ### 32. Класс Бинарное дерево поиска. Реализация дерева на связанной структуре хранении. Реализовать метод определения высоты дерева
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
+<details> 
+  <summary> 
+    <strong>[Depth.cpp]</strong>
+  </summary>
 
+Maximum/Minimum Depth (maxDepth()/minDepth()) The number of nodes along the longest/shortest path from the root node down to the farthest leaf node. The maxDepth of the empty tree is 0.
+
+```c++
+struct Tree
+{
+  char data;
+  Tree *left;
+  Tree *right;  
+  Tree *parent;  
+};
+
+int maxDepth(struct Tree *node)
+{
+  if(node == NULL || (node->left == NULL && node->right == NULL)) 
+            return 0;
+
+  int leftDepth = maxDepth(node->left);
+  int rightDepth = maxDepth(node->right);
+
+  return leftDepth > rightDepth ? 
+        leftDepth + 1 : rightDepth + 1;
+}
+
+int minDepth(struct Tree *node)
+{
+  if(node == NULL || (node->left == NULL && node->right == NULL)) 
+            return 0;
+
+  int leftDepth = minDepth(node->left);
+  int rightDepth = minDepth(node->right);
+
+  return leftDepth < rightDepth ? 
+        leftDepth + 1 : rightDepth + 1;
+}
 ```
+</details>
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
