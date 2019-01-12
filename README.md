@@ -784,11 +784,12 @@ T popFront():
       <strong>[Рис. Поиск элемента 4]</strong>
     </summary>
 	
-    ![alt text](https://i.imgur.com/i37O5wZ.png)
+    <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src="https://i.imgur.com/i37O5wZ.png" width=266"></a>
 	
   </details>
 </details>
 
+<details>
   <summary> 
     <strong>[Поиск минимума и максимума]</strong>
   </summary>
