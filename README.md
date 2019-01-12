@@ -1230,7 +1230,7 @@ typedef Node* Link;
     <strong>[Depth.cpp]</strong>
   </summary>
 
-Maximum/Minimum Depth (maxDepth()/minDepth()) The number of nodes along the longest/shortest path from the root node down to the farthest leaf node. The maxDepth of the empty tree is 0.
+Maximum/Minimum Depth [(maxDepth()/minDepth()] <br>The number of nodes along the longest/shortest path from the root node down to the farthest leaf node. <br>The maxDepth of the empty tree is 0.
 
 ```c++
 struct Tree
