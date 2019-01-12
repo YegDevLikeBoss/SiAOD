@@ -783,7 +783,7 @@ T popFront():
       <strong>[Рис. Поиск элемента 4]</strong>
     </summary>
 	
-      <img src="https://i.imgur.com/i37O5wZ.png" width=266">
+    <a href="https://github.com/ForWhomTheBellTolls/SiAOD"><img src="https://i.imgur.com/i37O5wZ.png" width=266"></a>
 	
   </details>
 </details>
