@@ -655,15 +655,14 @@ namespace algo {
 ---
 
 ### 11. Разработать класс «Бинарное дерево поиска». Реализовать метод вставки нового узла в дерево
+
 <details> 
   <summary> 
     <strong>[insertTreeNode.cpp]</strong>
   </summary>
 
-
 Insert Node [insertTreeNode()]
-Insertion begins as a search would begin; if the root is not equal to the value, we search the left or right subtrees as before. Eventually, we will reach an external node and add the value as its right or left child, depending on the node's value. In other words, we examine the root and recursively insert the new node to the left subtree if the new value is less than the root, or the right subtree if the new value is greater than or equal to the root. Ω(logn) operations
-
+<br>Insertion begins as a search would begin; if the root is not equal to the value, we search the left or right subtrees as before. Eventually, we will reach an external node and add the value as its right or left child, depending on the node's value.<br>In other words, we examine the root and recursively insert the new node to the left subtree if the new value is less than the root, or the right subtree if the new value is greater than or equal to the root. Ω(logn) operations
 ```c++
 struct Tree
 {
