@@ -226,15 +226,74 @@ inline int Stack<T>::getTop() const
 
 ### 4. С использованием основных методов работы со стеком составьте программу копирования элементов стека в новый стек в том же порядке
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
-
+<details> 
+  <summary> 
+	  <strong>[copyStack.cpp]</strong>
+  </summary>
+	
+```c++
+#include <iostream>
+#include <string>
+ 
+class firstStack{
+private:
+    int firstStackTop;
+    int firstStackArray[3];
+public:
+    firstStack(){
+        firstStackTop = -1;
+    }
+    void set(int value){
+        firstStackArray[++firstStackTop] = value;
+    }
+ 
+    int get(){
+        return firstStackArray[firstStackTop--];
+    }
+};
+ 
+class secondStack{
+private:
+    int secondStackTop;
+    int secondStackArray[3];
+public:
+    secondStack(){
+        secondStackTop = -1;
+    }
+ 
+    void set (firstStack* S){
+        secondStackArray[++secondStackTop] = S -> get();
+    }
+ 
+    void display(){
+        std::cout << secondStackArray[secondStackTop--] << std::endl;
+    }
+};
+ 
+ 
+int main(){
+    SetConsoleCP (1251);
+    SetConsoleOutputCP (1251);
+ 
+    firstStack from;
+    from.set(34);
+    from.set (54);
+    from.set (23);
+ 
+    secondStack to; to.set (&from);
+    to.set (&from);
+    to.set (&from);
+ 
+    to.display();
+    to.display();
+    to.display();
+ 
+ 
+    system ("pause");
+    return NULL;
+};
 ```
+</details>
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
