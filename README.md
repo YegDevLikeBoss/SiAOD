@@ -105,14 +105,112 @@
 
 ### 3. Реализуйте класс – Стек с базовым набором методов на основе массива нетипированных указателей на размещенные в динамической памяти элементы
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
-
+```c++
+template <typename T>
+class Stack
+{
+private:
+    T *stackPointer;                      // Указатель на стек
+    const int size;                   // Максимальное количество элементов в стеке
+    int top;                          // Номер текущего элемента стека
+public:
+    Stack(int = 10);                  // По умолчанию размер стека равен 10 элементам
+    Stack(const Stack<T> &);          // Конструктор копирования
+    ~Stack();                         // Жеструктор
+ 
+    inline void push(const T & );     // Поместить элемент в вершину стека
+    inline T pop();                   // Удалить элемент из вершины стека и вернуть его
+    inline void printStack();         // Вывод стека на экран
+    inline const T &Peek(int ) const; // N-й элемент от вершины стека
+    inline int getStackSize() const;  // Получить размер стека
+    inline T *getPointer() const;         // Получить указатель на стек
+    inline int getTop() const;        // Получить номер текущего элемента в стеке
+};
+ 
+// Реализация методов шаблона класса STack
+ 
+// Конструктор Стека
+template <typename T>
+Stack<T>::Stack(int maxSize) :
+    size(maxSize) // Инициализация константы
+{
+    stackPointer = new T[size]; // Выделить память под стек
+    top = 0; // Инициализируем текущий элемент нулем;
+}
+ 
+// Конструктор копирования
+template <typename T>
+Stack<T>::Stack(const Stack<T> & otherStack) :
+    size(otherStack.getStackSize()) // Инициализация константы
+{
+    stackPointer = new T[size]; // Выделить память под новый стек
+    top = otherStack.getTop();
+ 
+    for(int ix = 0; ix < top; ix++)
+        stackPointer[ix] = otherStack.getPointer()[ix];
+}
+ 
+// Функция деструктора Стека
+template <typename T>
+Stack<T>::~Stack()
+{
+    delete [] stackPointer; // Удаляем стек
+}
+ 
+// Функция добавления элемента в стек
+template <typename T>
+inline void Stack<T>::push(const T &value)
+{
+    // Проверяем размер стека
+    assert(top < size); // Номер текущего элемента должен быть меньше размера стека
+    stackPointer[top++] = value; // Помещаем элемент в стек
+}
+ 
+// Функция удаления элемента из стека
+template <typename T>
+inline T Stack<T>::pop()
+{
+    // Проверяем размер стека
+    assert(top > 0); // Номер текущего элемента должен быть больше 0
+    return stackPointer[--top]; // Удаляем элемент из стека
+}
+ 
+// Функция возвращает n-й элемент, в коде это chosenElement от вершины стека
+template <class T>
+inline const T &Stack<T>::Peek(int chosenElement) const
+{
+  assert(chosenElement <= top);
+  return stackPointer[top - chosenElement]; // Вернуть n-й элемент стека
+}
+ 
+// Вывод стека на экран
+template <typename T>
+inline void Stack<T>::printStack()
+{
+    for (int ix = top - 1; ix >= 0; ix--)
+        cout << "|" << setw(4) << stackPointer[ix] << endl;
+}
+ 
+// Вернуть размер стека
+template <typename T>
+inline int Stack<T>::getStackSize() const
+{
+    return size;
+}
+ 
+// Вернуть указатель на стек (для конструктора копирования)
+template <typename T>
+inline T *Stack<T>::getPointer() const
+{
+    return stackPointer;
+}
+ 
+// Вернуть размер стека
+template <typename T>
+inline int Stack<T>::getTop() const
+{
+    return top;
+}
 ```
 
 **[:u6e80:к Началу](#Оглавление)**
