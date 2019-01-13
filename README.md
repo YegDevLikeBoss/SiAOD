@@ -691,7 +691,7 @@ namespace algo {
 ```
 </details> 
 
-&emsp;&ensp;**[Еще код на C++](https://codelessons.ru/cplusplus/ochered-queue-v-c-realizaciya-i-chto-eto-voobshhe-takoe.html)**
+&emsp;&ensp;**[Еще код на C++](https://codelessons.ru/cplusplus/ochered-queue-v-c-realizaciya-i-chto-eto-voobshhe-takoe.html)**<br>
 &emsp;&ensp;**[Queue.h](https://github.com/mandliya/algorithms_and_data_structures/blob/master/include/queue.h)**
 
 **[:u6e80:к Началу](#Оглавление)**
