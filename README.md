@@ -105,6 +105,11 @@
 
 ### 3. Реализуйте класс – Стек с базовым набором методов на основе массива нетипированных указателей на размещенные в динамической памяти элементы
 
+<details> 
+  <summary> 
+	  <strong>[pointed_Stack.cpp]</strong>
+  </summary>
+
 ```c++
 template <typename T>
 class Stack
@@ -212,6 +217,7 @@ inline int Stack<T>::getTop() const
     return top;
 }
 ```
+</details>
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
