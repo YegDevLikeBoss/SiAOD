@@ -115,7 +115,7 @@ template <typename T>
 class Stack
 {
 private:
-    T *stackPointer;                      // Указатель на стек
+    T *stackPointer;                  // Указатель на стек
     const int size;                   // Максимальное количество элементов в стеке
     int top;                          // Номер текущего элемента стека
 public:
