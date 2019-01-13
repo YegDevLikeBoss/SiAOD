@@ -942,31 +942,31 @@ struct Tree* insertTreeNode(struct Tree *node, int data)
   </summary>
 
 В данной реализации изначально **head=n−1** и **tail=n−1**. Ключевые поля: 
-* **d[0…2×n−1]** — массив, с помощью которого реализуется дек, способный вместить не более n элементов,
+* **array[0…2×n−1]** — массив, с помощью которого реализуется дек, способный вместить не более n элементов,
 * **head** — индекс головы дека,
 * **tail** — индекс хвоста.
 
-Дек состоит из элементов **d[head…tail−1]**. Если происходит максимум **n** добавлений, то массив длины **2×n** может вместить в себя все добавленные элементы.
+Дек состоит из элементов **array[head…tail−1]**. Если происходит максимум **n** добавлений, то массив длины **2×n** может вместить в себя все добавленные элементы.
 
 ```c++
 boolean empty():
   return head == tail
   
 function pushBack(x : T):
-  d[tail++] = x
+  array[tail++] = x
   
 T popBack():
   if (empty()) 
     return error "underflow" 
-  return d[--tail]
+  return array[--tail]
   
 function pushFront(x : T):
-  d[--head] = x
+  array[--head] = x
   
 T popFront():
   if (empty()) 
     return error "underflow" 
-  return d[head++]
+  return array[head++]
 ```
 </details>
 
