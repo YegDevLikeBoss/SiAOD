@@ -815,15 +815,67 @@ int main()
 
 ### 8. С использованием стандартного набора методов составьте программу переноса из очереди строк в новую очередь элементов начинающихся на буквы «F» или «f»
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
+<details> 
+  <summary> 
+    <strong>[Черновик]</strong>
+  </summary>
+
+```c++
+//Создать массив строк, отсортировать его по нужным символам F и f, результат сортировки перезаписать в новый массив, 
+//который бы  передавался как основной для копирования из одной очереди в другую.
+typedef std::vector<std::string> StringArray;
+ 
+// Заполнение массива строк.
+void FillArray(StringArray& array)
+{
+  StringArray strings;
+  strings.push_back("Fsffsf");
+  strings.push_back("sfasdfa");
+  strings.push_back("324fsfd");
+  strings.push_back("F2422d");
+  strings.push_back("aadf");
+  array.swap(strings);
+}
+ 
+// Проверка символа. Если он "плохой" возвращаем true.
+bool IsSymbolBad(char symbol)
+{
+  return !isalpha(symbol);
+}
+ 
+// Проверка строки на наличие плохи символов.
+bool HasBadSymbol(const std::string& str)
+{
+  // Поиск "плохого" символа в строке.
+  std::string::const_iterator pos = std::find_if(str.begin(), str.end(), &IsSymbolBad);
+ 
+  // Если "плохой" символ найден, возвращаем true.
+  return pos != str.end();
+}
+ 
+// Обработка массива строк согласно заданию.
+void ProcessArray(StringArray& array)
+{
+  // Удаление строк у которых есть "плохие" символы.
+  StringArray::iterator newEnd = std::remove_if(array.begin(), array.end(), &HasBadSymbol);
+  array.erase(newEnd, array.end());
+ 
+  // Сортировка массива строк по алфавиту.
+  std::sort(array.begin(), array.end());
+}
+ 
+int main()
+{
+  StringArray array;
+  FillArray(array);
+  PrintArray("Before processing:", array);
+  ProcessArray(array);
+  PrintArray("After processing:", array);
+  return 0;
+}
 
 ```
+</details>
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
@@ -832,14 +884,60 @@ int main()
 
 ### 9. С использованием стандартного набора методов составьте программу записи элементов очереди в новую очередь в обратном порядке
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
+```c++
+// Копирование рассмотрено в методе swap() Вопрос №5
+// C++ code for reversing a queue 
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+// Utility function to print the queue 
+void printQueue(queue<long long int> Queue) 
+{ 
+    while (!Queue.empty()) { 
+        cout << Queue.front() << " "; 
+        Queue.pop(); 
+    } 
+} 
+  
+// Recursive function to reverse the queue 
+void reverseQueue(queue<long long int>& q) 
+{ 
+    // Base case 
+    if (q.empty()) 
+        return; 
+  
+    // Dequeue current item (from front)   
+    long long int data = q.front(); 
+    q.pop(); 
+  
+    // Reverse remaining queue   
+    reverseQueue(q); 
+  
+    // Enqueue current item (to rear)   
+    q.push(data); 
+} 
+  
+// Driver code 
+int main() 
+{ 
+    queue<long long int> Queue; 
+    Queue.push(56); 
+    Queue.push(27); 
+    Queue.push(30); 
+    Queue.push(45); 
+    Queue.push(85); 
+    Queue.push(92); 
+    Queue.push(58); 
+    Queue.push(80); 
+    Queue.push(90); 
+    Queue.push(100); 
+    reverseQueue(Queue); 
+    printQueue(Queue); 
+} 
 
+```
+```
+Результат: 100 90 80 58 92 85 45 30 27 56 
 ```
 
 **[:u6e80:к Началу](#Оглавление)**
