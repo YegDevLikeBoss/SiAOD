@@ -304,7 +304,7 @@ int main(){
     <strong>[swapQueue.cpp]</strong>
   </summary>
 <summary> 
-    <em>pop()</em>
+    <strong><em>pop()</em></strong>
   </summary>
 
 ```c++
