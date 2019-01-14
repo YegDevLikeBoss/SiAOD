@@ -327,7 +327,8 @@ int main(void) {
 }
 ```
 ```c++
-//front() returns a reference to the first element of the queue. This element will be removed after performing pop operation on queue.
+//front() returns a reference to the first element of the queue. 
+//This element will be removed after performing pop operation on queue.
 #include <iostream>
 #include <queue>
 
