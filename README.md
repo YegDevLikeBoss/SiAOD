@@ -329,9 +329,8 @@ int main(void) {
    return 0;
 }
 ```
-</details>
 <summary> 
-    <em>front()</em>
+    <strong><em>front()</em></strong>
   </summary>
 
 ```c++
@@ -353,9 +352,8 @@ int main(void) {
    return 0;
 }
 ```
-</details>
 <summary> 
-    <em>empty()</em>
+    <strong><em>empty()</em></strong>
   </summary>
 
 ```c++
@@ -380,9 +378,8 @@ int main(void) {
    return 0;
 }
 ```
-</details>
 <summary> 
-    <em>swap()</em>
+    <strong><em>swap()</em></strong>
   </summary>
 
 ```c++
