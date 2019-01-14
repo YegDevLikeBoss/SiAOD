@@ -329,6 +329,7 @@ int main(void) {
    return 0;
 }
 ```
+</details>
 <summary> 
     <em>front()</em>
   </summary>
@@ -352,6 +353,7 @@ int main(void) {
    return 0;
 }
 ```
+</details>
 <summary> 
     <em>empty()</em>
   </summary>
@@ -378,6 +380,7 @@ int main(void) {
    return 0;
 }
 ```
+</details>
 <summary> 
     <em>swap()</em>
   </summary>
