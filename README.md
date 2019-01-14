@@ -383,7 +383,7 @@ int main(void) {
   </summary>
 
 ```c++
-// swap() method exchanges the contents of two queues.
+// swap() exchanges the contents of two queues.
 #include <iostream>
 #include <queue>
 #include <list>
