@@ -299,16 +299,89 @@ int main(){
 --- 
 
 ### 5. Реализуйте метод копирования элементов очереди в новую очередь
+<details> 
+  <summary> 
+    <strong>[swapQueue.cpp]</strong>
+  </summary>
 
-```html
-  _________                     .__           ___________              __   
- /   _____/____    _____ ______ |  |   ____   \__    ___/___ ___  ____/  |_ 
- \_____  \\__  \  /     \\____ \|  | _/ __ \    |    |_/ __ \\  \/  /\   __\
- /        \/ __ \|  Y Y  \  |_> >  |_\  ___/    |    |\  ___/ >    <  |  |  
-/_______  (____  /__|_|  /   __/|____/\___  >   |____| \___  >__/\_ \ |__|  
-        \/     \/      \/|__|             \/               \/      \/       
+```c++
+// pop() removes front element of the queue and reduces size of the queue by one.
+#include <iostream>
+#include <queue>
 
+using namespace std;
+
+int main(void) {
+   queue<int> q;
+
+   for (int i = 0; i < 5; ++i)
+      q.emplace(i + 1);
+
+   cout << "Contents of queue" << endl;
+   while (!q.empty()) {
+      cout << q.front() << endl;
+      q.pop();
+   }
+
+   return 0;
+}
 ```
+```c++
+//front() returns a reference to the first element of the queue. This element will be removed after performing pop operation on queue.
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main(void) {
+   queue<int> q;
+
+   for (int i = 0; i < 5; ++i)
+      q.emplace(i + 1);
+
+   cout << "First element of queue = " << q.front() << endl;
+
+   return 0;
+}
+```
+```c++
+// swap() method exchanges the contents of two queues.
+#include <iostream>
+#include <queue>
+#include <list>
+
+using namespace std;
+
+int main(void) {
+   auto mainArray = {1, 2, 3, 4, 5};
+   queue<int> queueOne(mainArray);
+   queue<int> queueTwo(queueOne);
+
+   cout << "Contents of queueOne" << endl;
+   while (!queueOne.empty()) {
+      cout << queueOne.front() << endl;
+      queueOne.pop();
+   }
+   
+   cout << endl;
+
+   cout << "Contents of queueTwo" << endl;
+   while (!queueTwo.empty()) {
+      cout << queueTwo.front() << endl;
+      queueTwo.pop();
+   }
+
+   return 0;
+}
+```
+Результат:
+```
+Contents of queueOne: 1 2 3 4 5
+Contents of queueTwo: 1 2 3 4 5
+```
+</details>
+
+[Источник](http://www.tutorialspoint.com/cpp_standard_library/cpp_queue_swap_queue.htm)
 
 **[:u6e80:к Началу](#Оглавление)**
 <br>**[:u7121:к Середине](#20)**
