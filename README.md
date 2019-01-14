@@ -303,6 +303,9 @@ int main(){
   <summary> 
     <strong>[swapQueue.cpp]</strong>
   </summary>
+<summary> 
+    <em>pop()</em>
+  </summary>
 
 ```c++
 // pop() removes front element of the queue and reduces size of the queue by one.
@@ -326,6 +329,10 @@ int main(void) {
    return 0;
 }
 ```
+<summary> 
+    <em>front()</em>
+  </summary>
+
 ```c++
 //front() returns a reference to the first element of the queue. 
 //This element will be removed after performing pop operation on queue.
@@ -345,6 +352,36 @@ int main(void) {
    return 0;
 }
 ```
+<summary> 
+    <em>empty()</em>
+  </summary>
+
+```c++
+//empty() tests whether queue is empty or not. 
+//Queue of zero size is considered as empty queue.
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main(void) {
+   queue<int> q;
+
+   if (q.empty())
+      cout << "Queue is empty." << endl;
+
+   q.push(10);
+
+   if (!q.empty())
+      cout << "Queue is not empty." << endl;
+
+   return 0;
+}
+```
+<summary> 
+    <em>swap()</em>
+  </summary>
+
 ```c++
 // swap() method exchanges the contents of two queues.
 #include <iostream>
